@@ -7,7 +7,7 @@ class DB_Connect {
 
     // constructor
     function __construct() {
-        
+        //echo "Connenect   ";
     }
 
     // destructor

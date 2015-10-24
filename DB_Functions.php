@@ -10,6 +10,7 @@ class DB_Functions {
     //put your code here
     // constructor
     function __construct() {
+        //echo "Functions   ";
         require_once 'DB_Connect.php';
         // connecting to database
         $this->db = new DB_Connect();
@@ -43,8 +44,10 @@ class DB_Functions {
 
     public function registerEvent($name,$description,$date,$time,$contact_name_1,$contact_no_1,$contact_name_2,$contact_no_2,$Image,$requirements,$notes)
     {
+        echo $notes;
         $uuid=uniqid('',true);
-        $result=mysql_query("INSERT INTO events(id,name,description,date,time,contact_name_1,contact_no_1,contact_name_2,contact_no_2,Image,requirements,notes) VALUES('$name','$description','$date','$time','$contact_name_1','$contact_no_1','$contact_name_2','$contact_no_2','$Image','$requirements','$notes')");
+        $result=mysql_query("INSERT INTO events(id,name,description,date,time,contact_name_1,contact_name_2,contact_no_1,contact_no_2,Image,requirements,notes) VALUES('$name','$description','$date','$time','$contact_name_1','$contact_name_2','$contact_no_1','$contact_no_2','$Image','$requirements','$notes')");
+        echo $result ;
         if($result)
         {
             $uid = mysql_insert_id(); // last inserted id
